@@ -1,4 +1,12 @@
 import styled, { css } from 'styled-components';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+// Estilizando o DatePicker
+export const StyledDatePicker = styled(DatePicker)`
+    padding: 5px 5px;
+    width: 100px;
+`;
 
 export const ButtonContainer = styled.div`
   ${({ theme }) => css`
@@ -14,7 +22,7 @@ export const Button = styled.button`
     background: ${theme.colors.primary};
     color: ${theme.colors.white};
     border: none;
-    padding: ${theme.spacings.small} ${theme.spacings.large};
+    padding: 5px 5px;
     cursor: pointer;
 
     &:disabled  {
@@ -34,6 +42,7 @@ export const SearchContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
   `}
 `;
 
@@ -51,7 +60,7 @@ export const SearchButtonContainer = styled.div`
 
 export const SearchInput = styled.input`
   ${({ theme }) => css`
-    padding: 0.5rem ${theme.spacings.small};
+    padding: 5px 5px;
 
     &:disabled  {
       outline: 0.1rem solid ${theme.colors.secondary};

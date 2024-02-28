@@ -1,10 +1,14 @@
 import { Articles } from 'shared-typed/articles';
 
 // Define a função para buscar artigos com base em um termo de pesquisa
-export const searchArticles = async (searchTerm: string): Promise<Articles> => {
+export const searchArticles = async (
+  searchTerm: string,
+  startDate: string,
+  endDate: string,
+): Promise<Articles> => {
   try {
     // Monta a URL de busca com o termo fornecido
-    const apiUrl = `https://newsapi.org/v2/everything?language=pt&apiKey=13ea94ec5309407fb93ae68f087c1253&q=${encodeURIComponent(
+    const apiUrl = `https://newsapi.org/v2/everything?language=pt&from=${startDate}&to=${endDate}&apiKey=13ea94ec5309407fb93ae68f087c1253&q=${encodeURIComponent(
       searchTerm,
     )}`;
 
