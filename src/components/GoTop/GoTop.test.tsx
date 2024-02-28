@@ -4,7 +4,7 @@ import { GoTop } from '.';
 
 describe('<GoTop />', () => {
   it('should render go to top button', () => {
-    const { container } = renderTheme(<GoTop />);
+    renderTheme(<GoTop />);
     expect(screen.getByRole('link', { name: 'Go to top' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Go to top' })).toHaveAttribute(
       'href',
